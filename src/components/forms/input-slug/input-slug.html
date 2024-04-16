@@ -1,0 +1,39 @@
+<div class="form-group mb-3" :class="'col-' + cols">
+  <label class="col-form-label">{{ $t(title) }}</label>
+
+  <div class="d-flex">
+    <input type="text" v-model="inputValue" class="form-control" />
+
+    <div v-if="langs && isMultiLang" class="dropdown dropdown-langs">
+      <a
+        class="btn dropdown-toggle"
+        href="#"
+        role="button"
+        id="dropdownInputLangs"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <flag :country="langSelected" />
+      </a>
+
+      <ul class="dropdown-menu" aria-labelledby="dropdownInputLangs">
+        <li
+          v-for="(item, key) in langs.filter(x => x != langSelected)"
+          :key="key"
+        >
+          <a class="dropdown-item pt-2" @click="changeLanguage(item)">
+            <flag :country="item" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="mt-2 mb-0" v-if="note">
+    <small>{{ $t(note) }}</small>
+  </p>
+
+  <p class="mt-0" v-if="note2">
+    <small>{{ $t(note2) }}</small>
+  </p>
+</div>

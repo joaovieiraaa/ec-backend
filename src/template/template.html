@@ -1,0 +1,17 @@
+<!-- @if ( !Illuminate\Support\Str::contains(Route::currentRouteName(), 'page_builder') )
+@include('includes.topbar')
+@include('includes.sidebar') -->
+asda
+<topbar />
+<sidebar />
+
+<div class="main-content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <slot name="content"></slot>
+    </div>
+  </div>
+</div>
+<!-- @else
+@yield('content')
+@endif -->

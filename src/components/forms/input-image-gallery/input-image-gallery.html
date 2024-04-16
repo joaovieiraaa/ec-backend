@@ -1,0 +1,28 @@
+<div class="form-group mb-3">
+  <label class="col-form-label">{{ $t('Image') }}</label>
+
+  <div class="upload-input">
+    <template v-if="!objRendered.length">
+      <input type="file" @change="handleImage($event)" />
+      <i
+        class="display-4 text-muted ri-upload-cloud-2-line"
+        style="font-size: 20pt"
+      ></i>
+      <p class="mb-0">{{ $t('Select file') }}</p>
+    </template>
+    <template v-else>
+      <div class="img-grid">
+        <input type="file" @change="handleImage($event)" />
+        <div class="img-preview" v-for="item, key in objRendered">
+          <button class="btn btn-danger remove" @click="remove(key)">X</button>
+          <img
+            :src="getImgUrl(item)"
+            class="img-fluid"
+            alt="uploaded"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </template>
+  </div>
+</div>

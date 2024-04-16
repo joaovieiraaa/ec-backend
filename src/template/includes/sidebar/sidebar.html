@@ -1,0 +1,286 @@
+<div class="vertical-menu">
+  <div data-simplebar class="h-100">
+    <div id="sidebar-menu">
+      <ul class="metismenu list-unstyled" id="side-menu">
+        <li>
+          <a @click="router.push({name: 'dashboard'})" class="waves-effect">
+            <i class="ri-apps-2-fill"></i>
+            <span>{{ $t("Dashboard") }}</span>
+          </a>
+        </li>
+
+        <!-- <li class="menu-title">{{ $t("Theme") }}</li> -->
+
+        <!-- <li>
+            <a href="{{ Helper::route('popups') }}" class="waves-effect">
+              <i class="far fa-comment-alt"></i>
+              <span>{{ $t("Popups") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('popups_top') }}" class="waves-effect">
+              <i class="mdi mdi-bell-outline"></i>
+              <span>{{ $t("Top Alert") }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ Helper::route('themes_pages') }}" class="waves-effect">
+              <i class="mdi mdi-file-outline"></i>
+              <span>{{ $t("Pages") }}</span>
+            </a>
+          </li> -->
+
+        <!-- @if(auth()->user()->can('read-themes_routes'))
+                <li>
+                    <a href="{{ Helper::route('themes_routes') }}">
+                        <i class="mdi mdi-routes"></i>
+                        <span>{{ $t('Paths') }}</span>
+                    </a>
+                </li>
+                @endif -->
+
+        <!-- <li>
+            <a href="{{ Helper::route('themes') }}">
+              <i class="mdi mdi-cogs"></i>
+              <span>{{ $t("Settings") }}</span>
+            </a>
+          </li> -->
+
+        <li class="menu-title">{{ $t("E-commerce") }}</li>
+
+        <li>
+          <a @click="router.push({name: 'categories'})" class="waves-effect">
+            <i class="mdi mdi-format-list-bulleted"></i>
+            <span>{{ $t("Categories") }}</span>
+          </a>
+        </li>
+
+        <!-- <li>
+            <a href="{{ Helper::route('brands') }}" class="waves-effect">
+              <i class="mdi mdi-domain"></i>
+              <span>{{ $t("Brands") }}</span>
+            </a>
+          </li> -->
+
+        <li>
+          <a class="has-arrow waves-effect">
+            <i class="ri-shopping-basket-2-line"></i>
+            <span>{{ $t("Products") }}</span>
+          </a>
+
+          <ul class="sub-menu" aria-expanded="false">
+            <li>
+              <a @click="router.push({name: 'products'})"
+                ><i class="fas fa-angle-right"></i> {{ $t("List") }}</a
+              >
+            </li>
+            <!-- <li>
+                <a href="{{ Helper::route('products_discounts') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("Discounts") }}</a
+                >
+              </li>
+              <li>
+                <a href="{{ Helper::route('atributos') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("Attributes") }}</a
+                >
+              </li>
+              <li>
+                <a href="{{ Helper::route('product_extra_details') }}"
+                  ><i class="fas fa-angle-right"></i>
+                  {{ $t("Product Extra Details") }}</a
+                >
+              </li> -->
+          </ul>
+        </li>
+
+        <!-- <li>
+            <a href="{{ Helper::route('orders') }}" class="waves-effect">
+              <i class="ri-shopping-cart-2-line"></i>
+              <span>{{ $t("Orders") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('clients') }}" class="waves-effect">
+              <i class="ri-user-line"></i>
+              <span>{{ $t("Clients") }}</span>
+            </a>
+          </li>
+
+          <li class="menu-title">{{ $t("Marketing") }}</li>
+
+          <li>
+            <a href="{{ Helper::route('promotions') }}" class="waves-effect">
+              <i class="mdi mdi-percent"></i>
+              <span>{{ $t("Promotions") }}</span>
+            </a>
+          </li> -->
+
+        <!-- <li>
+            <a href="{{ Helper::route('promocodes') }}" class="waves-effect">
+              <i class="ri-coupon-4-line"></i>
+              <span>{{ $t("Promocodes") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{{ Helper::route('sistema_pontos') }}"
+              class="waves-effect"
+            >
+              <i class="ri-award-line"></i>
+              <span>{{ $t("Points System") }}</span>
+            </a>
+          </li> -->
+        <!--           
+          <li>
+            <a href="{{ Helper::route('mailchimp') }}" class="waves-effect">
+              <i class="fab fa-mailchimp"></i>
+              <span>{{ $t("Mailchimp") }}</span>
+            </a>
+          </li>
+
+          <li class="menu-title">{{ $t("Settings") }}</li>
+
+          <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+              <i class="ri-truck-line"></i>
+              <span>{{ $t("Shipping") }}</span>
+            </a>
+
+            <ul class="sub-menu" aria-expanded="false">
+              <li>
+                <a href="{{ Helper::route('shippings') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("List") }}</a
+                >
+              </li>
+              <li>
+                <a href="{{ Helper::route('countries') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("Countries") }}</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="javascript: void(0);" class="has-arrow waves-effect">
+              <i class="fab fa-google"></i>
+              <span>{{ $t("Google") }}</span>
+            </a>
+
+            <ul class="sub-menu" aria-expanded="false">
+              <li>
+                <a href="{{ Helper::route('google_analytics') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("Analytics") }}</a
+                >
+              </li>
+              <li>
+                <a href="{{ Helper::route('google_recaptcha') }}"
+                  ><i class="fas fa-angle-right"></i> {{ $t("Recaptcha") }}</a
+                >
+              </li>
+              <li>
+                <a href="{{ Helper::route('google_merchant_center') }}"
+                  ><i class="fas fa-angle-right"></i>
+                  {{ $t("Merchant Center") }}</a
+                >
+              </li>
+
+              <li>
+                <a href="{{ Helper::route('google_login') }}"
+                  ><i class="fas fa-angle-right"></i>
+                  {{ $t("Google Login") }}</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <a
+              href="{{ Helper::route('configs_instagram') }}"
+              class="waves-effect"
+            >
+              <i class="fab fa-instagram"></i>
+              <span>{{ $t("Instagram") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="{{ Helper::route('facebook_pixel') }}"
+              class="waves-effect"
+            >
+              <i class="fab fa-facebook"></i>
+              <span>{{ $t("Facebook Pixel") }}</span>
+            </a>
+          </li> -->
+
+        <!--  TODO: NEED BIG REFACTOR -->
+        <!-- @if (auth()->user()->can('read-social-networks'))
+                <li>
+                    <a href="{{ Helper::route('social-networks') }}" class="waves-effect">
+                        <i class="mdi mdi-globe-model"></i>
+                        <span>{{ $t('Social Networks') }}</span>
+                    </a>
+                </li>
+                @endif -->
+
+        <!-- <li>
+            <a href="{{ Helper::route('pagamentos') }}" class="waves-effect">
+              <i class="ri-visa-line"></i>
+              <span>{{ $t("Payments") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('easybill') }}" class="waves-effect">
+              <i class="ri-visa-line"></i>
+              <span>{{ $t("Easybill") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('configs_smtp') }}" class="waves-effect">
+              <i class="mdi mdi-email-send-outline"></i>
+              <span>{{ $t("Smtp & Emails") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('users') }}" class="waves-effect">
+              <i class="ri-user-search-line"></i>
+              <span>{{ $t("Users") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('user_roles') }}" class="waves-effect">
+              <i class="ri-account-circle-fill"></i>
+              <span>{{ $t("Roles") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('geolocation') }}" class="waves-effect">
+              <i class="ri-global-line"></i>
+              <span>{{ $t("Geolocation") }}</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ Helper::route('configs') }}" class="waves-effect">
+              <i class="ri-settings-3-line"></i>
+              <span>{{ $t("Advanced") }}</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="{{ Helper::route('modules') }}" class="waves-effect">
+              <i class="ri-settings-3-line"></i>
+              <span>{{ $t("Modules") }}</span>
+            </a>
+          </li> -->
+      </ul>
+    </div>
+  </div>
+</div>

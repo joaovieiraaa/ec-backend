@@ -1,0 +1,41 @@
+.upload-input {
+  position: relative;
+  background-color: #f4f4f4;
+  color: #111;
+  padding: 30px;
+  display: grid;
+  text-align: center;
+
+  input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+  }
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+
+  .img-preview {
+    height: auto;
+    position: relative;
+
+    img {
+      height: 120px;
+      object-fit: contain;
+      background-color: white;
+    }
+
+    .remove {
+      position: absolute;
+      top: 0;
+      right: 0;
+      box-shadow: 0px 2px 4px 0px rgba(69, 105, 255, 0.08);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.form-errors-popup.swal2-popup.swal2-toast {
+  flex-direction: column;
+  background-color: var(--bs-red);
+  align-items: flex-start;
+
+  .swal2-title {
+    color: var(--bs-light) !important;
+    margin-bottom: 14px;
+  }
+  .swal2-content {
+    margin: 0 0.6em;
+    color: var(--bs-light);
+    font-size: 13px;
+    
+    .swal2-html-container {
+      text-align: left;
+    }
+  }
+}

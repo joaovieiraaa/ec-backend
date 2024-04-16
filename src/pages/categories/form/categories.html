@@ -1,0 +1,50 @@
+<main-template>
+  <template v-slot:content>
+    <div class="card card-body d-flex">
+      <h4 class="card-title">{{ $t('Category') }}</h4>
+
+      <div>
+        <forms-buttons @save="submit()" />
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 70% auto; gap: 16px">
+      <div class="card card-body">
+        <input-langs
+          title="Name"
+          v-model="objRendered.name"
+          :lang="langSelected"
+          required
+        />
+
+        <input-textarea
+          title="Description"
+          v-model="objRendered.description"
+          isMultiLang
+        />
+
+        <input-color title="Category color" v-model="objRendered.color" />
+
+        <input-slug
+          title="URL"
+          v-model="objRendered.slug"
+          :data="objRendered.name"
+          note="This component auto generate the URL each time you change the title\name, if you want to create your own, do it after change the title\name"
+          note2="Dont forget to always generate URL SEO Friendly"
+          isMultiLang
+          required
+        />
+      </div>
+
+      <div class="card card-body">
+        <input-active title="Active" v-model="objRendered.active" />
+        <input-input title="#Order" v-model="objRendered.order" />
+        <input-select
+          title="Parent Category"
+          v-model="objRendered.parent_id"
+          :options="objCategories"
+        />
+      </div>
+    </div>
+  </template>
+</main-template>

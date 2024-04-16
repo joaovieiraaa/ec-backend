@@ -1,0 +1,8 @@
+<div class="form-group mb-3">
+  <label class="label-lg" v-if="title">
+    {{ title }}
+    <span v-if="props.required" style="color: red">*</span>
+  </label>
+
+  <input type="color" class="form-control form-control-color w-100" v-model="inputValue" title="Choose your color" />
+</div>

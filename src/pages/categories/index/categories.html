@@ -1,0 +1,26 @@
+<main-template>
+  <template v-slot:content>
+    <div class="card">
+      <div class="card-body">
+        <primetable
+          label="Categories"
+          :columns="columns"
+          :values="objRendered"
+          :isLoading="isLoading"
+          emitReload
+          @reload="get()"
+        >
+          <template #actions>
+            <div class="d-flex gap-1">
+              <a
+                @click="router.push({name: 'categories-new'})"
+                class="btn btn-success my-2 me-2"
+                >+ {{ $t('Add') }}</a
+              >
+            </div>
+          </template>
+        </primetable>
+      </div>
+    </div>
+  </template>
+</main-template>

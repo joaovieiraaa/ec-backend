@@ -1,0 +1,284 @@
+@import "./requires/bootstrap";
+@import "./requires/icons";
+@import "./requires/app";
+@import "variables";
+@import "toasts";
+@import "primetable";
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.logo {
+  line-height: unset;
+}
+
+input,
+.page-link {
+  cursor: pointer !important;
+}
+
+.table-rep-plugin .fixed-solution .sticky-table-header {
+  background-color: #f8f9fa;
+}
+
+.nav-tabs .nav-link.disabled {
+  color: red;
+  text-decoration: line-through !important;
+}
+
+.pagination-rounded .page-link {
+  height: unset;
+}
+
+.form-control-color {
+  max-width: unset;
+}
+
+.color-input.user {
+  width: 100%;
+
+  .box {
+    width: auto;
+    border-radius: 5px;
+
+    .transparent {
+      background-size: unset;
+    }
+  }
+}
+
+.dropzone {
+  display: flex;
+  justify-content: center;
+  border-width: 1px;
+
+  .dz-preview {
+    display: flex;
+    vertical-align: unset;
+
+    .dz-image {
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+      }
+    }
+
+    .dz-remove {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: red;
+      font-size: 22pt;
+      z-index: 100;
+    }
+  }
+}
+
+video::-webkit-media-controls-panel {
+  background-image: none !important;
+  filter: brightness(0.4);
+}
+
+.btn-toolbar {
+  .active {
+    border: 2px solid $primary;
+    color: $primary !important;
+    font-weight: bold;
+  }
+}
+
+.flag {
+  width: 42px !important;
+  height: 33px !important;
+  -webkit-transform: scale(0.5);
+  display: inline-block;
+}
+
+.v-select {
+  .vs__search:focus,
+  input {
+    height: 28.5px !important;
+  }
+}
+
+.preview-gallery-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  max-height: 400px;
+  max-width: 300px;
+  margin: 10px;
+  background-color: #00000008;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .gallery-item-key {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 30px;
+    padding: 5px 0;
+    text-align: center;
+    color: black;
+    background-color: white;
+  }
+
+  .gallery-item-url {
+    position: absolute;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    .gallery-item-url {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.dropdown-langs {
+  margin-left: 0.5rem;
+
+  .btn,
+  .dropdown-menu {
+    background-color: lightgray;
+    min-width: 50px;
+    width: 50px;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    text-align: center;
+
+    a {
+      padding: 5px 0 7px;
+    }
+  }
+}
+
+.modal-fixed {
+  position: fixed !important;
+  /*display: flex;*/
+  align-items: center;
+
+  .modal-content {
+    min-width: 550px;
+  }
+}
+
+.p-datatable-table {
+  &.table {
+    margin-bottom: 0px;
+  }
+
+  .p-datatable-tbody > tr > td {
+    border: 1px solid #eff2f7 !important;
+    border-width: 1px !important;
+  }
+
+  .p-datatable-thead {
+    tr > th {
+      border-width: 1px !important;
+      border: 1px solid #eff2f7 !important;
+    }
+
+    th {
+      padding: 0.3rem 0.3rem !important;
+    }
+
+    .p-column-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.p-datatable {
+  min-height: auto !important;
+  margin-bottom: 20px;
+
+  .p-datatable-footer {
+    border: 1px solid #eff2f7 !important;
+    border-width: 0px 1px 1px 1px !important;
+  }
+}
+
+// .p-datatable,
+// .p-datatable-wrapper {
+//   min-height: 300px !important;
+// }
+
+.p-datatable-loading-overlay {
+  background-color: transparent !important;
+}
+
+.p-inputtext {
+  font-size: 0.9rem !important;
+  padding: 0.47rem 0.75rem !important;
+}
+
+.loader {
+  background-color: #ffffff7d;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.p-inputgroup-addon {
+  padding: initial !important;
+}
+
+.p-datatable-emptymessage {
+  td {
+    text-align: center !important;
+  }
+}
+
+.vs__dropdown-menu {
+  height: 300px;
+}
+
+.selectable {
+  cursor: pointer;
+  border: 4px solid white;
+
+  &.selected {
+    border: 4px solid rgb(13, 205, 13);
+  }
+}

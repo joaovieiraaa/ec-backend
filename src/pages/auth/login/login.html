@@ -1,0 +1,106 @@
+<body class="auth-body-bg" style="overflow-x: hidden">
+  <div>
+    <div class="container-fluid p-0">
+      <div class="row no-gutters">
+        <div class="col-lg-4">
+          <div
+            class="authentication-page-content p-4 d-flex align-items-center min-vh-100"
+          >
+            <div class="w-100">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                  <div>
+                    <div class="text-center">
+                      <!-- @if (!empty($logo))
+                      <div class="logo">
+                        <img
+                          src="{{ Config::get('app.app_url') . '/uploads/logo/380xauto/' . $logo }}"
+                          width="160"
+                          alt="logo"
+                        />
+                      </div>
+                      @else
+                      <h2>{{ Config::get('app.name') }}</h2>
+                      @endif -->
+
+                      <div
+                        class="d-flex justify-content-center mt-4"
+                        style="gap: 8px"
+                      >
+                        <!-- @foreach ( collect(config('app.locales_app')) as $item )
+                        <a href="{{ Helper::change_locale($item) }}">
+                          <img
+                            src="{{ asset('/images/flags/' . $item . '.jpg')}}"
+                            alt="{{ $item }}"
+                            class="mr-2"
+                            height="18"
+                          />
+                        </a>
+                        @endforeach -->
+                      </div>
+                    </div>
+
+                    <div class="p-2 mt-5">
+                      <div class="form-group auth-form-group-custom mb-4">
+                        <i class="ri-user-2-line auti-custom-input-icon"></i>
+                        <label for="email">{{ $t('Email') }}</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          required
+                          autocomplete="email"
+                          placeholder="Email"
+                          v-model="objRendered.email"
+                        />
+                        <!-- @error('email')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror -->
+                      </div>
+
+                      <div class="form-group auth-form-group-custom mb-4">
+                        <i class="ri-lock-2-line auti-custom-input-icon"></i>
+                        <label for="password">{{ $t('Password') }}</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          required
+                          autocomplete="current-password"
+                          placeholder="Password"
+                          v-model="objRendered.password"
+                        />
+                        <!-- @error('password')
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                          </span>
+                          @enderror -->
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between custom-control custom-checkbox"
+                      ></div>
+
+                      <div class="mt-4 text-center">
+                        <button
+                          class="col-12 btn btn-primary w-md waves-effect waves-light"
+                          type="submit"
+                          @click="submit()"
+                        >
+                          {{ $t('Login') }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="authentication-bg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
