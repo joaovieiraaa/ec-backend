@@ -1,5 +1,5 @@
 import { APILogic, ApiResponse } from "@/axios";
-import { generateResponse } from "@/helpers";
+import { generateResponse } from "@/utils/axios";
 
 export async function active(context: string, id: number, payload: any) {
   let response = new ApiResponse();

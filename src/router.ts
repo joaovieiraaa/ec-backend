@@ -5,6 +5,7 @@ import { routes as routesCategories } from "@/pages/categories/routes";
 
 import Login from "@/pages/auth/login/login.vue";
 import Dashboard from "@/pages/dashboard/dashboard.vue";
+import Configs from "@/pages/configs/configs.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -22,12 +23,12 @@ const router = createRouter({
       meta: { safe: true },
     },
     ...routesCategories,
-    // {
-    //   path: "/products",
-    //   name: "products",
-    //   component: Dashboard,
-    //   meta: { safe: true },
-    // },
+    {
+      path: "/configs",
+      name: "configs",
+      component: Configs,
+      meta: { safe: true },
+    },
   ],
 });
 

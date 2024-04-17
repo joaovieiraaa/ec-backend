@@ -1,5 +1,8 @@
 <div class="form-group mb-3">
-  <label class="col-form-label">{{ $t('Image') }}</label>
+  <p class="fw-bold" v-if="props.title">
+    {{ $t(props.title) }}
+    <span v-if="props.required" style="color: red">*</span>
+  </p>
 
   <div class="upload-input">
     <template v-if="!objRendered.length">

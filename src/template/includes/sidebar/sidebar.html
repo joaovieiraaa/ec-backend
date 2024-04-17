@@ -139,11 +139,17 @@
               <i class="fab fa-mailchimp"></i>
               <span>{{ $t("Mailchimp") }}</span>
             </a>
-          </li>
+          </li> -->
 
-          <li class="menu-title">{{ $t("Settings") }}</li>
+        <li class="menu-title">{{ $t("Settings") }}</li>
 
-          <li>
+        <li>
+          <a @click="router.push({name: 'configs'})" class="waves-effect">
+            <i class="ri-settings-3-line"></i>
+            <span>{{ $t("Advanced") }}</span>
+          </a>
+        </li>
+        <!-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
               <i class="ri-truck-line"></i>
               <span>{{ $t("Shipping") }}</span>
@@ -265,12 +271,6 @@
             <a href="{{ Helper::route('geolocation') }}" class="waves-effect">
               <i class="ri-global-line"></i>
               <span>{{ $t("Geolocation") }}</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ Helper::route('configs') }}" class="waves-effect">
-              <i class="ri-settings-3-line"></i>
-              <span>{{ $t("Advanced") }}</span>
             </a>
           </li>
 

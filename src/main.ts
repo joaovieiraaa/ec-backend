@@ -24,6 +24,10 @@ import InputImageGallery from "./components/forms/input-image-gallery/input-imag
 import InputSlug from "./components/forms/input-slug/input-slug.vue";
 import InputText from "./components/forms/input-text/input-text.vue";
 import InputTextarea from "./components/forms/input-textarea/input-textarea.vue";
+import InputMultiSelect from "./components/forms/input-multi-select/input-multi-select.vue";
+import InputSelect from "./components/forms/input-select/input-select.vue";
+import FormActions from "./components/forms/actions.vue";
+import FormLangSelect from "./components/forms/lang-select/lang-select.vue";
 
 const app = createApp(App);
 
@@ -41,6 +45,10 @@ app
   .component("input-image", InputImage)
   .component("input-image-gallery", InputImageGallery)
   .component("input-slug", InputSlug)
+  .component("input-select", InputSelect)
   .component("input-text", InputText)
   .component("input-textarea", InputTextarea)
+  .component("input-multi-select", InputMultiSelect)
+  .component("form-actions", FormActions)
+  .component("form-lang-select", FormLangSelect)
   .mount("#app");

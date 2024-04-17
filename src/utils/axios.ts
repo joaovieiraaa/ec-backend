@@ -9,8 +9,8 @@ export function generateResponse(event: any) {
   const responseData = event.data ?? event.request.response ?? null;
   const errorMessages = event.data?.errors?.message ?? event.code ?? null;
   const hasErrors =
-    !!event.data?.errors ||
     event.response?.status > 204 ||
+    !!event.data?.errors ||
     event.request?.status === 0;
   const status = event.status ?? event.code ?? null;
 

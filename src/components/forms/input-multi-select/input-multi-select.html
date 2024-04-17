@@ -1,0 +1,20 @@
+<div class="form-group mb-3 col-12">
+  <p v-if="title" class="label-lg" :for="componentId">
+    {{ $t(title) }}
+    <span v-if="props.required" style="color: red">*</span>
+  </p>
+
+  <MultiSelect
+    v-model="inputValue"
+    optionLabel="name"
+    display="chip"
+    :options="props.data"
+    :placeholder="$t('Select')"
+  >
+    <template #option="slotProps">
+      <div class="flex align-items-center">
+        <div>{{ slotProps.option.name }}</div>
+      </div>
+    </template>
+  </MultiSelect>
+</div>

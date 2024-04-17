@@ -12,7 +12,7 @@ const props = defineProps({
     type: Array<any>,
   },
   title: {
-    default: "",
+    default: "Gallery",
     type: String,
   },
   zone: {

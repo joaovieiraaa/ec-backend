@@ -4,16 +4,18 @@
       <h4 class="card-title">{{ $t('Category') }}</h4>
 
       <div>
-        <forms-buttons @save="submit()" />
+        <form-lang-select @changed="lang = $event.toLowerCase()" />
+        <form-actions @save="submit()" />
       </div>
     </div>
 
     <div style="display: grid; grid-template-columns: 70% auto; gap: 16px">
       <div class="card card-body">
+        {{ objRendered.name }}
         <input-langs
           title="Name"
           v-model="objRendered.name"
-          :lang="langSelected"
+          :lang="lang"
           required
         />
 

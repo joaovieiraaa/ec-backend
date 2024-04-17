@@ -1,0 +1,20 @@
+<div class="form-group mb-3">
+  <p class="fw-bold" v-if="props.title">
+    {{ $t(props.title) }}
+    <span v-if="props.required" style="color: red">*</span>
+  </p>
+
+  <select class="form-select" v-model="inputValue" :disabled="props.disabled">
+    <option
+      v-for="item, key in props.options"
+      :key="key"
+      :value="item[props.keyValue]"
+    >
+      {{ $t(item[props.keyExpr]) }}
+    </option>
+  </select>
+
+  <p class="mb-0" v-if="props.note">
+    <small>{{ props.note }}</small>
+  </p>
+</div>

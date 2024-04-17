@@ -1,49 +1,4 @@
-<template>
-  <div class="form-group" :class="mb">
-    <label v-if="title" class="label-lg">{{ $t(title) }}</label>
-    <div v-if="type != 'password'" class="input-group">
-      <input
-        v-if="type != 'password'"
-        class="form-control"
-        v-model="inputValue"
-        :name="props.name"
-        :max="props.max"
-        :placeholder="placeholder"
-        :type="props.type"
-        :is-required="props.name + (props.lang ? '_' + props.lang : '')"
-        :readOnly="readOnly"
-        :required="props.required"
-        :disabled="props.disabled"
-      />
-      <span class="input-group-text" v-if="props.currency || props.percent">
-        <template v-if="props.currency">€</template>
-        <template v-else-if="props.percent">%</template>
-      </span>
-    </div>
-    <div v-else class="input-group">
-      <input
-        class="form-control"
-        v-model="inputValue"
-        :placeholder="placeholder"
-        :type="props.type"
-        :is-required="props.name + (props.lang ? '_' + props.lang : '')"
-        :required="props.required"
-        :disabled="props.disabled"
-      />
-      <button
-        class="btn btn-info mdi mdi-eye-outline"
-        type="button"
-        @click="togglePassword"
-      ></button>
-    </div>
-    <p v-if="props.note" class="mb-0">
-      <small>{{ props.note }}</small>
-    </p>
-    <forms-validation
-      :name="props.name + (props.lang ? '_' + props.lang : '')"
-    />
-  </div>
-</template>
+<template src="./input-text.html"></template>
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
@@ -65,7 +20,6 @@ const props = defineProps({
   required: { default: false, type: Boolean },
   disabled: { default: false, type: Boolean },
   max: { default: 1000000, type: Number },
-  mb: { default: "mb-3", type: String },
 });
 
 const previousValue = ref<any>();

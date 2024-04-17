@@ -8,6 +8,16 @@ export const objLangs = {
   pl: null,
 };
 
+export function floatify(value: string) {
+  const formatter = value
+    .toString()
+    .replace(/,/g, ".")
+    .replace(/[^0-9.]/g, "")
+    .replace(/(\..*?)\..*/g, "$1");
+
+  return formatter;
+}
+
 export function randomString(length = 8) {
   const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let randomString = "";

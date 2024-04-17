@@ -2,15 +2,10 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { objLangs, cloneObject, randomString } from "@/utils/helpers";
+import { objLangs, cloneObject, floatify } from "@/utils/helpers";
 import i18n from "@/i18n/i18n";
-// import { objLangs, floatify, cloneObject } from "@/helpers";
 
 const props = defineProps({
-  placeholder: {
-    default: "",
-    type: String,
-  },
   readonly: {
     default: false,
     type: Boolean,
@@ -45,8 +40,6 @@ const props = defineProps({
   },
 });
 
-const componentId = ref<string>(`c-${randomString()}`);
-
 const emit = defineEmits(["update:modelValue"]);
 
 // const langs = $configs.languages;
@@ -61,7 +54,7 @@ function changeLanguage(value: any) {
 watch(
   () => inputValue.value,
   (value: any) => {
-    // data.value[lang.value] = props.numberOnly ? floatify(value) : value;
+    data.value[lang.value] = props.numberOnly ? floatify(value) : value;
 
     emit("update:modelValue", data.value);
   },
@@ -73,6 +66,13 @@ watch(
   (value: any) => {
     data.value = cloneObject(value);
     inputValue.value = value[lang.value];
+  }
+);
+
+watch(
+  () => props.lang,
+  (value: string) => {
+    lang.value = value;
   }
 );
 

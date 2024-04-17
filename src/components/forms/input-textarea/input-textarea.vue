@@ -1,9 +1,9 @@
 <template>
-  <div class="form-group mb-3" :id="componentId">
-    <label class="col-form-label mb-0" :for="componentId">
-      {{ $t(title) }}
+  <div class="form-group mb-3">
+    <p class="fw-bold" v-if="props.title">
+      {{ $t(props.title) }}
       <span v-if="props.required" style="color: red">*</span>
-    </label>
+    </p>
 
     <textarea class="form-control" v-model="inputValue"></textarea>
 
@@ -35,8 +35,6 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["update:modelValue"]);
-
-const componentId = ref<string>(`c-${randomString()}`);
 
 const lang = ref<any>(props.lang);
 

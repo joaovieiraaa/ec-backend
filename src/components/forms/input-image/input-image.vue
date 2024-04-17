@@ -9,7 +9,7 @@ const props = defineProps({
     default: null,
   },
   title: {
-    default: "",
+    default: "Image",
     type: String,
   },
   name: {

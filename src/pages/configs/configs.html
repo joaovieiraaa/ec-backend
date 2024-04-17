@@ -1,0 +1,35 @@
+<main-template>
+  <template v-slot:content>
+    <div
+      class="card card-body"
+      style="display: grid; grid-template-columns: 1fr 1fr"
+    >
+      <h4 class="card-title">{{ $t('AdvancedSettings') }}</h4>
+
+      <form-actions @save="submit()" />
+    </div>
+
+    <div class="card card-body">
+      <input-text title="Name" v-model="objRendered.name" required />
+
+      <input-text
+        title="URL"
+        v-model="objRendered.url"
+        note="Ex: https://domain.com"
+      />
+
+      <input-select
+        title="FallbackLocale"
+        keyValue="code"
+        v-model="objRendered.fallback_locale"
+        :options="objCountries"
+      />
+
+      <input-multi-select
+        title="Countries"
+        v-model="objRendered.languages"
+        :data="objCountries"
+      />
+    </div>
+  </template>
+</main-template>

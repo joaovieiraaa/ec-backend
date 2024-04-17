@@ -1,15 +1,14 @@
-<div class="form-group mb-3" :id="componentId">
-  <label v-if="title" class="label-lg" :for="componentId">
+<div class="form-group mb-3">
+  <p v-if="title" class="label-lg">
     {{ $t(title) }}
     <span v-if="props.required" style="color: red">*</span>
-  </label>
+  </p>
 
   <div class="d-flex">
     <input
       type="text"
       class="form-control"
       v-model="inputValue"
-      :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
     />

@@ -36,8 +36,7 @@ export const update = async (payload: any) => {
 
   let queryResponse = null;
 
-  await axios
-    .put(`/api/categories/${payload.id}`, payload)
+  await ApiLogic.put(`/api/categories/${payload.id}`, payload)
     .then((response: any) => {
       queryResponse = response;
     })

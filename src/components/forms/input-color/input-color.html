@@ -1,8 +1,13 @@
 <div class="form-group mb-3">
-  <label class="label-lg" v-if="title">
-    {{ title }}
+  <p class="fw-bold" v-if="props.title">
+    {{ $t(props.title) }}
     <span v-if="props.required" style="color: red">*</span>
-  </label>
+  </p>
 
-  <input type="color" class="form-control form-control-color w-100" v-model="inputValue" title="Choose your color" />
+  <input
+    type="color"
+    class="form-control form-control-color w-100"
+    v-model="inputValue"
+    title="Choose your color"
+  />
 </div>

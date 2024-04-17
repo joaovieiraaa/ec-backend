@@ -13,7 +13,7 @@ const props = defineProps(["data", "categories"]);
 // const { $configs } = useApp();
 
 const action = ref<"store" | "update">("store");
-const langSelected = ref<string>(i18n.global.locale.value);
+const lang = ref<string>(i18n.global.locale.value);
 const objRendered = ref<ICategories>(cloneObject(model));
 
 onMounted(() => {
